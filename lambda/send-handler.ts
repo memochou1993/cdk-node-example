@@ -18,7 +18,7 @@ export const handler: APIGatewayProxyWebsocketHandlerV2 = async (event) => {
     endpoint: `${event.requestContext.domainName}/${event.requestContext.stage}`,
   });
 
-  const message = JSON.parse(event.body ?? '{}').message;
+  const { message } = JSON.parse(event.body ?? '{}');
 
   await Promise.all(
     connections
@@ -30,7 +30,7 @@ export const handler: APIGatewayProxyWebsocketHandlerV2 = async (event) => {
             Data: message,
           })
           .promise()
-      ))
+      )),
   );
   return {
     statusCode: 200,
