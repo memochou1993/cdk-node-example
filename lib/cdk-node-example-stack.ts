@@ -5,7 +5,7 @@ import { BillingMode, Table } from 'aws-cdk-lib/aws-dynamodb';
 import { Architecture, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 
-export class PollyApiStack extends cdk.Stack {
+export class CdkNodeExampleStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
@@ -23,7 +23,7 @@ export class PollyApiStack extends cdk.Stack {
     const sendMessageHandler = this.sendMessageHandlerBuilder(table);
     const defaultHandler = this.defaultHandlerBuilder();
 
-    const webSocketApi = new WebSocketApi(this, 'PollyWebSocketApi', {
+    const webSocketApi = new WebSocketApi(this, 'CdkNodeExampleWebSocketApi', {
       routeSelectionExpression: '$request.body.action',
       connectRouteOptions: {
         integration: new WebSocketLambdaIntegration('ConnectIntegration', connectHandler),
@@ -42,7 +42,7 @@ export class PollyApiStack extends cdk.Stack {
     webSocketApi.grantManageConnections(sendMessageHandler);
     webSocketApi.grantManageConnections(defaultHandler);
 
-    new WebSocketStage(this, 'PollyProductionStage', {
+    new WebSocketStage(this, 'CdkNodeExampleProductionStage', {
       webSocketApi,
       stageName: 'production',
       autoDeploy: true,

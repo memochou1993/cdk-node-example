@@ -1,8 +1,8 @@
 {
-  "name": "polly-api",
+  "name": "cdk-node-example",
   "version": "0.1.0",
   "bin": {
-    "polly-api": "bin/polly-api.js"
+    "cdk-node-example": "bin/cdk-node-example.js"
   },
   "scripts": {
     "build": "tsc",

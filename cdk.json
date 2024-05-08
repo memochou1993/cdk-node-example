@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/polly-api.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/cdk-node-example.ts",
   "watch": {
     "include": [
       "**"

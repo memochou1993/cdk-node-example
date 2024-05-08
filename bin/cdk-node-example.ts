@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { PollyApiStack } from '../lib/polly-api-stack';
+import { PollyApiStack } from '../lib/cdk-node-example-stack';
 
 const app = new cdk.App();
 new PollyApiStack(app, 'PollyApiStack', {

@@ -1,13 +1,13 @@
 // import * as cdk from 'aws-cdk-lib';
 // import { Template } from 'aws-cdk-lib/assertions';
-// import * as PollyApi from '../lib/polly-api-stack';
+// import * as CdkNodeExample from '../lib/cdk-node-example-stack';
 
 // example test. To run these tests, uncomment this file along with the
-// example resource in lib/polly-api-stack.ts
+// example resource in lib/cdk-node-example-stack.ts
 test('SQS Queue Created', () => {
 //   const app = new cdk.App();
 //     // WHEN
-//   const stack = new PollyApi.PollyApiStack(app, 'MyTestStack');
+//   const stack = new CdkNodeExample.CdkNodeExampleStack(app, 'MyTestStack');
 //     // THEN
 //   const template = Template.fromStack(stack);
 
